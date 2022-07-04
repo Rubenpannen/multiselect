@@ -12,12 +12,12 @@ export default [
     plugins: [
       alias({
         entries: [
-          { find: 'composition-api', replacement: '@vue/composition-api' },
+          { find: 'composition-api', replacement: 'vue-prev' },
         ]
       }),
       vue(),
     ],
-    external: ['@vue/composition-api'],
+    external: ['vue-prev'],
   },
   {
     input: 'src/Multiselect.vue',
@@ -27,18 +27,18 @@ export default [
       name: 'VueformMultiselect',
       globals: {
         'vue': 'Vue',
-        '@vue/composition-api': 'VueCompositionAPI',
+        'vue-prev': 'Vue',
       }
     },
     plugins: [
       alias({
         entries: [
-          { find: 'composition-api', replacement: '@vue/composition-api' },
+          { find: 'composition-api', replacement: 'vue-prev' },
         ]
       }),
       vue(),
       terser()
     ],
-    external: ['@vue/composition-api', 'vue'],
+    external: ['vue-prev', 'vue'],
   }
 ]
